@@ -26,3 +26,33 @@ main > .container {
 .questions{
         margin-top: 5%;
 }
+.estimate{
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        padding: 4px;
+    }
+.likes_counter{
+        font-size: 20px;
+}
+.pages{
+        border: 2px solid gray;
+        border-radius: 5px;
+}
+.Popular_tags{
+        padding-left: 5%;
+}
+.red_tag{
+        color: tomato;
+}
+.green_tag{
+        color: green;
+        font-size: 30px;
+}
+.orange_tag{
+        color: orange;
+        font-size: 25px;
+}
+.member_list{
+        padding-bottom: 10px;
+}
