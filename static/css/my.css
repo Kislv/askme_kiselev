@@ -1,0 +1,28 @@
+main > .container {
+    padding: 60px 15px 0;
+}
+.question{
+    margin: 30px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20%;
+}
+.username{
+        color: silver;
+        margin-bottom: 10px;
+        font-size: 20px;
+}
+.settings_log_out{
+        color:silver;
+        font-size: 20px;
+}
+.questions{
+        margin-top: 5%;
+}
