@@ -2,6 +2,15 @@
 node_modules/
 venv/
 *.pyc
+ask.html
+base.html
+hot.html
+index.html
+login.html
+question.html
+signup.html
+tag_listing.html.html
+user_settings.html
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
