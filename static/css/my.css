@@ -1,6 +1,10 @@
 main > .container {
     padding: 60px 15px 0;
 }
+.title{
+        margin: 23px 0 23px 0;
+        font-size: 30px;
+}
 .question{
     margin: 30px;
     padding: 10px;
@@ -8,8 +12,8 @@ main > .container {
     border-radius: 5px;
 }
 .avatar{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 10px;
     padding: 5px;
     border-radius: 20%;
@@ -55,4 +59,35 @@ main > .container {
 }
 .member_list{
         padding-bottom: 10px;
+}
+.new_question{
+        margin-bottom: 30px;
+}
+.active_question{
+        margin: 30px;
+        padding: 10px;
+    }
+.active_question_avatar{
+        width:100px;
+        height:100px;
+}
+.horizontal_line{
+        margin-top:5%
+}
+.horizontal_line_my_answer{
+        margin:3% 0% 3% 4%;
+
+}
+.answer_button{
+        margin-left:4%;
+}
+.input_down{
+        margin: 10px 20px 15px 0;
+}
+.wrong{
+        color:tomato;
+        margin:-20px 0 10px 0;
+}
+.create_new_account{
+        margin:15px 0 0 -10px;
 }

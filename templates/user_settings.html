@@ -1,0 +1,34 @@
+{% extends "incl/base.html" %}
+{% load static %}
+
+{% block content %}
+        <div class="row">
+                <h2 class="new_question">Settings: Tony Stark</h2>
+        </div>
+        <div class="row">
+                <b class="col-2">Login</b>
+                <input type="text" class="col-9 new_question" placeholder="tony_the_boss" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">Email</b>
+                <input type="text" class="col-9 new_question" placeholder="tonystark@mail.ru" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">NickName</b>
+                <input type="text" class="col-9 new_question" placeholder="Tony Stark" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">Upload avatar</b>
+                <img src = "{% static "img/main avatar.jpeg" %}" class = "avatar active_question_avatar " alt="error with avatar">
+        </div>
+        <div class="row">
+                <b class="col-2"></b>
+                <input type="text" class="col-2 new_question input_down" placeholder="c:\avatar.jpg" maxlength="100">
+                <button class="btn btn-outline-success col-1" type="submit">CHOOSE</button>
+        </div>
+
+        <div class="row">
+                <b class="col-2"></b>
+                <button class="btn btn-outline-success col-1" type="submit">SAVE</button>
+        </div>
+{% endblock content %}

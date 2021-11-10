@@ -1,0 +1,28 @@
+{% extends "incl/base.html" %}
+{% load static %}
+
+{% block content %}
+        <div class="row">
+                <h2 class="new_question">Log in</h2>
+        </div>
+        <div class="row">
+                <b class="wrong">Sorry, wrong password</b>
+        </div>
+        <div class="row">
+                <b class="col-2">Login</b>
+                <input type="text" class="col-9 new_question" placeholder="tony_the_boss" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">Password</b>
+                <input type="text" class="col-9 new_question" placeholder="tonystark@mail.ru" maxlength="25">
+        </div>
+
+        <div class="row">
+                <b class="col-2"></b>
+                <button class="btn btn-outline-success col-1" type="submit">Log in!</button>
+        </div>
+        <div class="row">
+                <b class="col-2"></b>
+                <a class="col create_new_account" href ="{% url "signup" %}">create new account</a>
+        </div>
+{% endblock content %}

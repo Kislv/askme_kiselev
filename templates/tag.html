@@ -1,0 +1,17 @@
+{% extends "incl/base.html" %}
+{% load static %}
+
+{% block content %}
+      <div class="col-9 container-fluid">
+                  <div class="row">
+                          <div class="col"><h2>Tag: {{ tag_name }}</h2></div>
+                  </div>
+          <div>
+          {% for question in questions %}
+          {% include "incl/single_question.html" %}
+          {% endfor %}
+          {% include "incl/pagination.html" %}
+          </div>
+      </div>
+{% endblock content %}
+

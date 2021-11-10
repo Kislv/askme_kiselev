@@ -1,0 +1,41 @@
+{% extends "incl/base.html" %}
+{% load static %}
+
+{% block content %}
+        <div class="row">
+                <h2 class="new_question">Registration</h2>
+        </div>
+        <div class="row">
+                <b class="wrong">Sorry, this email address already registred!</b>
+        </div>
+        <div class="row">
+                <b class="col-2">Login</b>
+                <input type="text" class="col-4 new_question" placeholder="tony_the_boss" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">Email</b>
+                <input type="text" class="col-4 new_question" placeholder="tonystark@mail.ru" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">NickName</b>
+                <input type="text" class="col-4 new_question" placeholder="Tony Stark" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">Password</b>
+                <input type="text" class="col-4 new_question" placeholder="" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">Repeat password</b>
+                <input type="text" class="col-4 new_question" placeholder="" maxlength="25">
+        </div>
+        <div class="row">
+                <b class="col-2">Upload avatar</b>
+                <input type="text" class="col-2 new_question input_down" placeholder="c:\avatar.jpg" maxlength="100">
+                <button class="btn btn-outline-success col-1" type="submit">CHOOSE</button>
+        </div>
+
+        <div class="row">
+                <b class="col-2"></b>
+                <button class="btn btn-outline-success col-2" type="submit">REGISTER</button>
+        </div>
+{% endblock content %}

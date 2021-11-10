@@ -1,0 +1,24 @@
+{% extends "incl/base.html" %}
+{% load static %}
+
+{% block content %}
+        <div class="row">
+                <h2 class="new_question">New question</h2>
+        </div>
+        <div class="row">
+                <b class="col-2">Title</b>
+                <input type="text" class="col-9 new_question" placeholder="How to assemble a team of avengers?" maxlength="50">
+        </div>
+        <div class="row">
+                <b class="col-2">Text</b>
+                <textarea name="" id="" cols="30" rows="10" class="col-9 new_question" placeholder=" Really, how?&#10 Have no idea about it" maxlength="500"></textarea>
+        </div>
+        <div class="row">
+                <b class="col-2">Tags</b>
+                <input type="text" class="col-9 new_question" placeholder="avengers, team" maxlength="100">
+        </div>
+        <div class="row">
+                <b class="col-2"></b>
+                <button class="btn btn-outline-success col-1" type="submit">ASK!</button>
+        </div>
+{% endblock content %}
