@@ -10,21 +10,22 @@
                 <!--<h3><a href ="{perc url "question" question.numberperc}"> {{ question.title }}</a></h3>--> <!-- How to destroy Thanos? -->
                 <h3><a href ="{% url "question" number=question.id %}"> {{ question.title }}</a></h3> <!-- How to destroy Thanos? -->
                     {{ question.text }}
-                    <!--Guys, Thanos wants to take over my planet,
-                I have never encountered this problem.
-                Can you please tell me where can I get the team in order to defeat him?-->
                 </div>
           </div>
           <div class="row">
                   <div class="col">
-                          <b class="likes_counter">5</b>
+                          <b class="likes_counter">{{ question.rating }}</b>
                           <img class ="estimate" src="{% static "img/like button (off).png" %}" alt="">
                           <img class ="estimate" src="{% static "img/dislike button (off).png" %}" alt="">
                   </div>
-                  <div class="col" href = "#">answers(3) </div>
+                  <div class="col" href = {% url 'question' number=question.id %}>answers({{ question.answers.count }}) </div>
                   <div class="col">
                           Tags:
-                          <a href ="{% url "tag" tag="superhero" %}">superhero</a>
+                            {% for tag in question.tags.all %}
+                                <a href="{% url "tag" tag=tag %}">{{ tag }}</a>
+<!--                                class="black-jeck"-->
+                            {% endfor %}
+<!--                          <a href ="{% url "tag" tag="superhero" %}">superhero</a>-->
                           <!--<a href ="{% url "tag" tag="Thanos" %}">Thanos</a>-->
                   </div>
           </div>

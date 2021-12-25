@@ -1,6 +1,7 @@
 .idea/
 node_modules/
 venv/
+venv1/
 *.pyc
 ask.html
 base.html
@@ -11,6 +12,7 @@ question.html
 signup.html
 tag_listing.html.html
 user_settings.html
+db.postgresql
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

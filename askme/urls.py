@@ -18,8 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views
-from app import urls as app_urls
-from django.conf.urls import include
+
 
 
 
@@ -27,10 +26,8 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hot/', views.hot, name="hot"),
-
+    path('hot/', views.hot, name='hot'),
     path('question/<int:number>/', views.question, name='question'),
-
     path('ask/', views.ask, name="ask"),
     path('index/', views.index, name="index"),
     path('login/', views.login, name="login"),
