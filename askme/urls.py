@@ -36,5 +36,5 @@ urlpatterns = [
     path('tag/', views.tag, name="tag"),
     path('user_settings/', views.user_settings, name="user_settings"),
     path('new/', views.index, name="new"),
-    path('', views.index, name="index") #path('',include(app_name_urls))
+    path('', views.index, name="index")
 ]
