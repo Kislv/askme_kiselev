@@ -4,7 +4,8 @@
                 <div class="row container-fluid question">
                         <div class="row">
                               <div class="col-3">
-                                      <img class = "avatar" src="{% static "img/Avatar №1.jpg" %}" alt="">
+{#                                      <img class = "avatar" src="{% static "img/Avatar №1.jpg" %}" alt="">#}
+                                  <img src="{{ answer.author.avatar.url }}" class="avatar">
                               </div>
                               <div class="col-9">
                                 <h3>{{ answer.title }}</h3> <!-- How to destroy Thanos? -->

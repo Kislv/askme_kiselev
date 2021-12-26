@@ -1,28 +1,75 @@
 {% extends "incl/base.html" %}
 {% load static %}
+{% load bootstrap4 %}
+
+{% block link %}
+<link href="{% static "css/my.css" %}" rel="stylesheet">
+{% endblock link %}
+
+{% block header %}
+    {% include "include/navbar.html" %}
+{% endblock header %}
 
 {% block content %}
         <div class="row">
                 <h2 class="new_question">Log in</h2>
         </div>
-        <div class="row">
-                <b class="wrong">Sorry, wrong password</b>
-        </div>
-        <div class="row">
-                <b class="col-2">Login</b>
-                <input type="text" class="col-9 new_question" placeholder="tony_the_boss" maxlength="25">
-        </div>
-        <div class="row">
-                <b class="col-2">Password</b>
-                <input type="text" class="col-9 new_question" placeholder="tonystark@mail.ru" maxlength="25">
-        </div>
-
-        <div class="row">
-                <b class="col-2"></b>
-                <button class="btn btn-outline-success col-1" type="submit">Log in!</button>
-        </div>
-        <div class="row">
-                <b class="col-2"></b>
-                <a class="col create_new_account" href ="{% url "signup" %}">create new account</a>
-        </div>
+        {% if error_message %}<p class="error_log_message">{{ error_message }}</p> {% endif %}
+        <form class="login_form" method="POST" action="/login/?next={{ redirect_to }}" name="form" novalidate>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+            <input required type="submit" class="btn btn-outline-secondary form_log" id="hidden" value="Log in">
+            {% endbuttons %}
+            <p class="form_log"><a href="#1">Create new account</a></p>
+            <!--      <div class="row">-->
+            <!--        <div class="col-2">Login</div>-->
+            <!--        <div class="col-4">      -->
+            <!--          <input type="text" name="user" placeholder="login"></div>-->
+            <!--        </div>-->
+            <!--        <div class="row">-->
+            <!--          <div class="col-2">Password</div>-->
+            <!--          <div class="col-4">-->
+            <!--            <input type="Password" name="Password" placeholder="Password" minlength="6">-->
+            <!--            <input required type="submit" class="btn btn-outline-secondary form_log" id="hidden" value="Log in">-->
+            <!--            <p class="form_log"><a href="#1">Create new account</a></p>-->
+            <!--          </div>-->
+            <!--        </div>-->
+            <!--        -->
+        </form>
 {% endblock content %}
+
+
+{#{% extends "incl/base.html" %}#}
+{#{% load static %}#}
+{#{% load bootstrap4 %}#}
+{##}
+{#{% block link %}#}
+{#<link href="{% static "css/my.css" %}" rel="stylesheet">#}
+{#{% endblock link %}#}
+
+{#{% block content %}#}
+{#        <div class="row">#}
+{#                <h2 class="new_question">Log in</h2>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <b class="wrong">Sorry, wrong password</b>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <b class="col-2">Login</b>#}
+{#                <input type="text" class="col-9 new_question" placeholder="tony_the_boss" maxlength="25">#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <b class="col-2">Password</b>#}
+{#                <input type="text" class="col-9 new_question" placeholder="tonystark@mail.ru" maxlength="25">#}
+{#        </div>#}
+{##}
+{#        <div class="row">#}
+{#                <b class="col-2"></b>#}
+{#                <button class="btn btn-outline-success col-1" type="submit">Log in!</button>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <b class="col-2"></b>#}
+{#                <a class="col create_new_account" href ="{% url "signup" %}">create new account</a>#}
+{#        </div>#}
+{#{% endblock content %}#}

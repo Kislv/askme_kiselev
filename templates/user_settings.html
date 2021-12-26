@@ -1,34 +1,45 @@
 {% extends "incl/base.html" %}
 {% load static %}
-
+{% block header %}
+    {% include "include/navbar.html" %}
+{% endblock header %}
 {% block content %}
-        <div class="row">
-                <h2 class="new_question">Settings: Tony Stark</h2>
-        </div>
-        <div class="row">
-                <b class="col-2">Login</b>
-                <input type="text" class="col-9 new_question" placeholder="tony_the_boss" maxlength="25">
-        </div>
-        <div class="row">
-                <b class="col-2">Email</b>
-                <input type="text" class="col-9 new_question" placeholder="tonystark@mail.ru" maxlength="25">
-        </div>
-        <div class="row">
-                <b class="col-2">NickName</b>
-                <input type="text" class="col-9 new_question" placeholder="Tony Stark" maxlength="25">
-        </div>
-        <div class="row">
-                <b class="col-2">Upload avatar</b>
-                <img src = "{% static "img/main avatar.jpeg" %}" class = "avatar active_question_avatar " alt="error with avatar">
-        </div>
-        <div class="row">
-                <b class="col-2"></b>
-                <input type="text" class="col-2 new_question input_down" placeholder="c:\avatar.jpg" maxlength="100">
-                <button class="btn btn-outline-success col-1" type="submit">CHOOSE</button>
-        </div>
+{% load bootstrap4 %}
 
-        <div class="row">
-                <b class="col-2"></b>
-                <button class="btn btn-outline-success col-1" type="submit">SAVE</button>
-        </div>
+
+    <h2 class ="" id="new_question">Settings</h2>
+
+    <form class="settings_form col-9 new_question" method="post" name="form" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+
+    {% bootstrap_form form %}
+
+      {% buttons %}
+      <input required type="submit" class="btn btn-outline-secondary save_button" value="Save">
+            {% endbuttons %}
+
+      <!--      <div class="row logs">-->
+<!--        <div class="col-2">Login</div>-->
+<!--        <div class="col-4">      -->
+<!--          <input type="text" name="user" placeholder="login" value="Dr.Who"></div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--        <div class="col-2">Email</div>-->
+<!--        <div class="col-4">      -->
+<!--          <input type="email" name="user" placeholder="Email" value="Dr.pepper@mail.ru"></div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--        <div class="col-2">NickName</div>-->
+<!--        <div class="col-4">      -->
+<!--          <input type="text" name="user" placeholder="NickName" value="Dr.Who"></div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--          <div class="col-2">Upload your avatar:</div>-->
+<!--          <div class="col-4">-->
+<!--            <img src="{% static "img/ava.jpg" %}" id="ava_settings">-->
+<!--            <input required type="file" id="inp_file" name="img0">-->
+<!--            <input required type="submit" class="btn btn-outline-secondary form_log" value="Save">-->
+<!--          </div>-->
+<!--        </div>-->
+      </form>
 {% endblock content %}

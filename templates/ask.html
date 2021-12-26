@@ -1,24 +1,39 @@
 {% extends "incl/base.html" %}
 {% load static %}
+{% load bootstrap4 %}
+{% block header %}
+{% include "incl/navbar.html" %}
+{% endblock header %}
 
 {% block content %}
         <div class="row">
                 <h2 class="new_question">New question</h2>
         </div>
-        <div class="row">
-                <b class="col-2">Title</b>
-                <input type="text" class="col-9 new_question" placeholder="How to assemble a team of avengers?" maxlength="50">
-        </div>
-        <div class="row">
-                <b class="col-2">Text</b>
-                <textarea name="" id="" cols="30" rows="10" class="col-9 new_question" placeholder=" Really, how?&#10 Have no idea about it" maxlength="500"></textarea>
-        </div>
-        <div class="row">
-                <b class="col-2">Tags</b>
-                <input type="text" class="col-9 new_question" placeholder="avengers, team" maxlength="100">
-        </div>
-        <div class="row">
-                <b class="col-2"></b>
-                <button class="btn btn-outline-success col-1" type="submit">ASK!</button>
-        </div>
+        <form class="ask_form" id="ask" method="POST" action="/ask/">
+        {% for error in error_message %}
+        <p class="error_log_message">{{ error }}</p>
+    {% endfor %}
+      {% csrf_token %}
+    {% bootstrap_form form %}
+      {% buttons %}
+      <input required type="submit" class="btn btn-outline-secondary input_form" value="ASK!">
+          {% endbuttons %}
+{#        <div class="row">#}
+{#                <b class="col-2">Title</b>#}
+{#                <input type="text" class="col-9 new_question" placeholder="How to assemble a team of avengers?" maxlength="50">#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <b class="col-2">Text</b>#}
+{#                <textarea name="" id="" cols="30" rows="10" class="col-9 new_question" placeholder=" Really, how?&#10 Have no idea about it" maxlength="500"></textarea>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <b class="col-2">Tags</b>#}
+{#                <input type="text" class="col-9 new_question" placeholder="avengers, team" maxlength="100">#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <b class="col-2"></b>#}
+{#                <button class="btn btn-outline-success col-1" type="submit">ASK!</button>#}
+{#        </div>#}
+        </form>
 {% endblock content %}
+{% block linkjs %}

@@ -1,29 +1,74 @@
 {% extends "incl/base.html" %}
 {% load static %}
+{% load bootstrap4 %}
+{% block link %}
+    <link href="{% static "css/my.css" %}" rel="stylesheet">
+{% endblock link %}
+{% block header %}
+    {% include "incl/navbar.html" %}
+{% endblock header %}
+
 {% block content %}
+          <div class="row">
+            <div class="col-3">
+              <img src="{{ question.author.avatar.url }}" id="main_ava">
+              <button id="like_btn" class="btn">Like</button>
+              <div class="likes">22</div>
+            </div>
+            <div class="col-9">
+              <h3 class="title">{{ question.title }}</h3>
+              <div class="text" id="text_question">
+               {{ question.text }}
+             </div>
+             <div class="row_in_question">
+              Tags:
+              {% for tag in question.tags.all %}
+                <a href="{% url "tag" tag=tag %}" class="black-jeck">{{ tag }}</a>
+                {% endfor %}
+            </div>
 
-        <div class="row container-fluid active_question">
-          {% include "incl/single_question.html" %}
-          <hr class="horizontal_line" size="8">
+          </div>
+          <hr id="hr">
         </div>
 
+{% for answer in answers %}
+    {% include "include/answer.html" %}
+{% endfor %}
+    {% if user.is_authenticated %}
 
-          {% for answer in answers %}
-            {% include "incl/single_answer.html" %}
-          {% endfor %}
-          {% include "incl/pagination.html" %}
+  <form method="POST" action="{{ request.path }}" name="form" novalidate>
+<!--    <textarea class="form-control"  rows="4" placeholder="Enter your answer here.."></textarea>-->
+            {% csrf_token %}
 
-        <div class="row">
-                <hr class="horizontal_line_my_answer" size="8">
-        </div>
-        <div class="row">
-                <textarea name="" id="" cols="30" rows="5" class="col new_question horizontal_line_my_answer" placeholder="Enter your answer here." maxlength="500"></textarea>
-        </div>
-        <div class="row">
-                <button class="btn btn-outline-success col-1 answer_button" type="submit">Answer</button>
-        </div>
+    {% bootstrap_form form %}
 
-
-
-
+      {% buttons %}
+    <button required type="submit" class="btn btn-secondary btn_answer">Answer</button>
+      {% endbuttons %}
+  </form>
+{% endif %}
 {% endblock content %}
+
+{#{% block content %}#}
+{##}
+{#        <div class="row container-fluid active_question">#}
+{#          {% include "incl/single_question.html" %}#}
+{#          <hr class="horizontal_line" size="8">#}
+{#        </div>#}
+{##}
+{##}
+{#          {% for answer in answers %}#}
+{#            {% include "incl/single_answer.html" %}#}
+{#          {% endfor %}#}
+{#          {% include "incl/pagination.html" %}#}
+{##}
+{#        <div class="row">#}
+{#                <hr class="horizontal_line_my_answer" size="8">#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <textarea name="" id="" cols="30" rows="5" class="col new_question horizontal_line_my_answer" placeholder="Enter your answer here." maxlength="500"></textarea>#}
+{#        </div>#}
+{#        <div class="row">#}
+{#                <button class="btn btn-outline-success col-1 answer_button" type="submit">Answer</button>#}
+{#        </div>#}
+{#{% endblock content %}#}

@@ -111,14 +111,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         if options['users']:
-            self.fill_users(10005)
+            self.fill_users(105)
         if options['tags']:
-            self.fill_tags(10005)
+            self.fill_tags(105)
         if options['question']:
-            self.fill_question(100005)
+            self.fill_question(1005)
         if options['answer']:
-            self.fill_answer(1000005)
+            self.fill_answer(1005)
         if options['likesQ']:
-            self.fill_like_question(1000005)
+            self.fill_like_question(1005)
         if options['likesA']:
-            self.fill_like_answer(1000005)
+            self.fill_like_answer(1005)
