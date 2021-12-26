@@ -6,9 +6,7 @@
                         <img class = "avatar" src="{{ question.author.avatar.url }}" alt="">
                 </div>
                 <div class="col-9">
-
-                <!--<h3><a href ="{perc url "question" question.numberperc}"> {{ question.title }}</a></h3>--> <!-- How to destroy Thanos? -->
-                <h3><a href ="{% url "question" number=question.id %}"> {{ question.title }}</a></h3> <!-- How to destroy Thanos? -->
+                <h3><a href ="{% url "question" number=question.id %}"> {{ question.title }}</a></h3>
                     {{ question.text }}
                 </div>
           </div>
@@ -16,17 +14,13 @@
                   <div class="col">
                           <b class="likes_counter">{{ question.rating }}</b>
                           <img class ="estimate" src="{% static "img/like button (off).png" %}" alt="">
-                          <img class ="estimate" src="{% static "img/dislike button (off).png" %}" alt="">
                   </div>
-                  <div class="col" href = {% url 'question' number=question.id %}>answers({{ question.answers.count }}) </div>
+                  <div class="col" ><a href = "{% url 'question' number=question.id %}">answers({{ question.answers.count }}) </a></div>
                   <div class="col">
                           Tags:
                             {% for tag in question.tags.all %}
                                 <a href="{% url "tag" tag=tag %}">{{ tag }}</a>
-<!--                                class="black-jeck"-->
                             {% endfor %}
-<!--                          <a href ="{% url "tag" tag="superhero" %}">superhero</a>-->
-                          <!--<a href ="{% url "tag" tag="Thanos" %}">Thanos</a>-->
                   </div>
           </div>
 </div>

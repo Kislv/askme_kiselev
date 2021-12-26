@@ -1,4 +1,3 @@
-import random
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from app.models import *
@@ -70,7 +69,7 @@ def signup(request):
             user.save()
             auth.login(request, user)
             return redirect('/')
-    return render(request, 'registration.html', {'form': form, 'error_message': errors})
+    return render(request, 'signup.html', {'form': form, 'error_message': errors})
 
 def logout(request):
     auth.logout(request)
@@ -93,7 +92,7 @@ def user_settings(request):
                 else:
                     setattr(request.user, change, request.POST[change])
             request.user.save()
-            return redirect('settings')
+            return redirect('user_settings')
     return render(request, 'user_settings.html', {'form': form})
 
 def question(request, number):

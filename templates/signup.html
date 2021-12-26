@@ -5,15 +5,9 @@
     <link href="{% static "css/my.css" %}" rel="stylesheet">
 {% endblock link %}
 
-{% block header %}
-    {% include "incl/navbar.html" %}
-{% endblock header %}
-
 {% block content %}
     <h2 id="new_question">Registration</h2>
-
-
-    <form role="form" class="login_form" action="{% url 'registration' %}" method="POST" novalidate>
+    <form role="form" class="login_form" action="{% url 'signup' %}" method="POST" novalidate>
         {% csrf_token %}
 {% for error in error_message %}
         <p class="error_log_message">{{ error }}</p>
@@ -22,87 +16,9 @@
 {% buttons %}
         <input required type="submit" class="btn btn-outline-secondary form_log" value="Sign up">
                   {% endbuttons %}
-<!--      <div class="row logs">-->
-<!--        <div class="col-2">First name</div>-->
-<!--        <div class="col-4">-->
-<!--          <input type="text" name="first_name" type="first_name" placeholder="First name"></div>-->
-<!--        </div>-->
-<!--        <div class="row logs">-->
-<!--        <div class="col-2">Last name</div>-->
-<!--        <div class="col-4">-->
-<!--          <input type="text" name="last_name" type="last_name" placeholder="Last name"></div>-->
-<!--        </div>-->
-<!--        <div class="row logs">-->
-<!--        <div class="col-2">Email</div>-->
-<!--        <div class="col-4">-->
-<!--          <input type="email" name="email" type="email" placeholder="Email"></div>-->
-<!--        </div>-->
-<!--        <div class="row logs">-->
-<!--        <div class="col-2">Username</div>-->
-<!--        <div class="col-4">-->
-<!--          <input type="text" name="username" type="username" placeholder="NickName"></div>-->
-<!--        </div>-->
-<!--        <div class="row logs">-->
-<!--          <div class="col-2">Password</div>-->
-<!--          <div class="col-4"><input type="password" name="password" placeholder="Password" minlength="6">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--         <div class="row logs">-->
-<!--          <div class="col-2">Repeat password</div>-->
-<!--          <div class="col-4"><input type="password" name="password_confirm" placeholder="Repeat password" minlength="6">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="row logs">-->
-<!--          <div class="col-2">Upload your avatar:</div>-->
-<!--          <div class="col-4"><input required type="file" id="g5" name="img0">-->
-
-
-<!--          </div>-->
-<!--       </div>-->
       </form>
 {% endblock content %}
 
 {% block linkjs %}
 <script type="text/javascript" src="{% static "js/login.js" %}" defer></script>
 {% endblock linkjs %}
-
-
-
-{#{% block content %}#}
-{#        <div class="row">#}
-{#                <h2 class="new_question">Registration</h2>#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="wrong">Sorry, this email address already registred!</b>#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">Login</b>#}
-{#                <input type="text" class="col-4 new_question" placeholder="tony_the_boss" maxlength="25">#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">Email</b>#}
-{#                <input type="text" class="col-4 new_question" placeholder="tonystark@mail.ru" maxlength="25">#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">NickName</b>#}
-{#                <input type="text" class="col-4 new_question" placeholder="Tony Stark" maxlength="25">#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">Password</b>#}
-{#                <input type="text" class="col-4 new_question" placeholder="" maxlength="25">#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">Repeat password</b>#}
-{#                <input type="text" class="col-4 new_question" placeholder="" maxlength="25">#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">Upload avatar</b>#}
-{#                <input type="text" class="col-2 new_question input_down" placeholder="c:\avatar.jpg" maxlength="100">#}
-{#                <button class="btn btn-outline-success col-1" type="submit">CHOOSE</button>#}
-{#        </div>#}
-{##}
-{#        <div class="row">#}
-{#                <b class="col-2"></b>#}
-{#                <button class="btn btn-outline-success col-2" type="submit">REGISTER</button>#}
-{#        </div>#}
-{#{% endblock content %}#}

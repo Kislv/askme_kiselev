@@ -117,7 +117,7 @@ class Command(BaseCommand):
         if options['question']:
             self.fill_question(1005)
         if options['answer']:
-            self.fill_answer(1005)
+            self.fill_answer(10005)
         if options['likesQ']:
             self.fill_like_question(1005)
         if options['likesA']:

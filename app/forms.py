@@ -1,6 +1,5 @@
 from django import forms
 from app.models import User, Question, Answer
-from django.core.exceptions import ValidationError
 
 
 class LoginForm(forms.Form):

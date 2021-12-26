@@ -1,9 +1,7 @@
 {% extends "incl/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
-{% block header %}
-{% include "incl/navbar.html" %}
-{% endblock header %}
+
 
 {% block content %}
         <div class="row">
@@ -18,22 +16,10 @@
       {% buttons %}
       <input required type="submit" class="btn btn-outline-secondary input_form" value="ASK!">
           {% endbuttons %}
-{#        <div class="row">#}
-{#                <b class="col-2">Title</b>#}
-{#                <input type="text" class="col-9 new_question" placeholder="How to assemble a team of avengers?" maxlength="50">#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">Text</b>#}
-{#                <textarea name="" id="" cols="30" rows="10" class="col-9 new_question" placeholder=" Really, how?&#10 Have no idea about it" maxlength="500"></textarea>#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2">Tags</b>#}
-{#                <input type="text" class="col-9 new_question" placeholder="avengers, team" maxlength="100">#}
-{#        </div>#}
-{#        <div class="row">#}
-{#                <b class="col-2"></b>#}
-{#                <button class="btn btn-outline-success col-1" type="submit">ASK!</button>#}
-{#        </div>#}
         </form>
 {% endblock content %}
 {% block linkjs %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script type="text/javascript" src="{% static "js/ask.js" %}"></script>
+{% endblock linkjs %}
